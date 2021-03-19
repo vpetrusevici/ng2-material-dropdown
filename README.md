@@ -1,5 +1,6 @@
 # Angular2 Dropdown Component
 
+This is a fork from https://www.npmjs.com/package/ng2-material-dropdown with update to support Angular 11
 Material-like dropdown component for Angular2.
 
 ## Install

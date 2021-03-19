@@ -23,10 +23,12 @@
                         "polyfills": "demo-app/polyfills.ts",
                         "tsConfig": "demo-app/tsconfig.app.json",
                         "assets": [],
-                        "styles": ["demo-app/styles.scss"],
+                        "styles": [
+                            "demo-app/styles.scss"
+                        ],
                         "scripts": [],
-                        "es5BrowserSupport": true,
-                        "preserveSymlinks": true
+                        "preserveSymlinks": true,
+                        "aot": true
                     },
                     "configurations": {
                         "production": {
@@ -41,7 +43,6 @@
                             "sourceMap": false,
                             "extractCss": true,
                             "namedChunks": false,
-                            "aot": true,
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
@@ -50,6 +51,10 @@
                                     "type": "initial",
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
                                 }
                             ]
                         }
@@ -93,6 +98,37 @@
                 }
             }
         },
+        "lib": {
+            "root": "",
+            "sourceRoot": "",
+            "projectType": "library",
+            "prefix": "ng2",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "tsconfig.json"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "tsconfig.app.json",
+                            "tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },
         "modules": {
             "projectType": "application",
             "schematics": {
@@ -114,7 +150,8 @@
                         "tsConfig": "tsconfig.app.json",
                         "assets": ["demo/favicon.ico"],
                         "styles": ["demo/style.css"],
-                        "scripts": []
+                        "scripts": [],
+                        "aot": true
                     },
                     "configurations": {
                         "production": {
@@ -123,7 +160,6 @@
                             "sourceMap": true,
                             "extractCss": true,
                             "namedChunks": false,
-                            "aot": true,
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
@@ -132,6 +168,10 @@
                                     "type": "initial",
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
                                 }
                             ]
                         }
