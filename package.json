@@ -1,10 +1,9 @@
 {
-  "name": "ng2-material-dropdown",
-  "version": "0.11.0",
+  "name": "@vpetrusevici/ng2-material-dropdown",
+  "version": "0.12.0",
   "description": "Angular material-like dropdown component",
   "scripts": {
-    "release": "npm run build && npm publish dist",
-    "postrelease": "rm -rf dist",
+    "release": "npm run build && cd dist && npm publish --access public",
     "build": "ng build lib",
     "start": "ng serve demo-app",
     "test": "ng test modules --watch=false"
@@ -54,14 +53,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vpetrusevici/ng2-material-dropdown"
+    "url": "git+https://github.com/vpetrusevici/ng2-material-dropdown.git"
   },
   "bugs": {
     "url": "https://github.com/Gbuomprisco/ng2-material-dropdown/issues"
   },
   "homepage": "https://github.com/Gbuomprisco/ng2-material-dropdown",
-  "main": "./dist/ng2-dropdown.bundle.js",
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "dependencies": {
     "tslib": "^2.1.0"
   },
@@ -69,5 +66,7 @@
     "lib": {
       "entryFile": "index.ts"
     }
-  }
+  },
+  "main": "ng2-dropdown.bundle.js",
+  "author": ""
 }

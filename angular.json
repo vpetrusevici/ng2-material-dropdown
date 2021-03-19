@@ -99,8 +99,7 @@
             }
         },
         "lib": {
-            "root": "",
-            "sourceRoot": "",
+            "root": "/",
             "projectType": "library",
             "prefix": "ng2",
             "schematics": {
@@ -112,7 +111,8 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:ng-packagr",
                     "options": {
-                        "tsConfig": "tsconfig.json"
+                        "tsConfig": "tsconfig.json",
+                        "project": "ng-package.json"
                     }
                 },
                 "lint": {

@@ -3,7 +3,7 @@
         "removeComments": true,
         "noImplicitAny": false,
         "module": "esnext",
-        "target": "es5",
+        "target": "es2015",
         "outDir": "dist",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -13,6 +13,7 @@
         "inlineSources": true,
         "skipLibCheck": true,
         "moduleResolution": "node",
+        "baseUrl": "./",
         "rootDir": ".",
         "types": ["node", "jasmine"],
         "lib": ["dom", "es2015"],
@@ -26,7 +27,8 @@
         "fullTemplateTypeCheck": true,
         "strictInjectionParameters": true,
         "enableResourceInlining": true,
-        "preserveSymlinks": true
+        "preserveSymlinks": true,
+        "enableIvy": false
     },
     "exclude": ["node_modules", "dist"],
     "compileOnSave": false,
